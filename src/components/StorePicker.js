@@ -10,6 +10,7 @@ class StorePicker extends React.Component{
     goToStore(event){
         //--things we have to achieve
         //1.stop the form to automatic refreshing 
+    
         //2.get the text we are getting in the form
         //3.Also change the page from StorePicker to the store page we are going to
         event.preventDefault()
