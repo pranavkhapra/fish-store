@@ -1,23 +1,21 @@
-import React from "react";
-
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import StorePicker from './StorePicker'
-import App from './App'
+import React, { Component } from 'react'
+import {BrowserRouter,Route,Switch} from "react-router-dom"
 import NotFound from './NotFound'
-
-export default function Router() {
-  return (
-    <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={StorePicker}/>
-            <Route exact path="/store/:storeid" component={App}/>
-            <Route component={NotFound}/>
-        </Switch>
-    </BrowserRouter>
-    ) 
+import Home from './Home'
+import Store from './Store'
+export default class Router extends Component {
+    render() {
+        
+        return (
+            <>
+            <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={Home}></Route>
+                <Route exact path="/store/:idOfTheStore" component={Store}></Route>
+                <Route exact component={NotFound}></Route>
+            </Switch>
+            </BrowserRouter> 
+            </>
+        )
+    }
 }
