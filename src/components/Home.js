@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import {getFunName} from '../helpers'
 export default class Home extends Component {
     constructor(props) {
         super()
@@ -19,7 +19,7 @@ export default class Home extends Component {
         <>
       <form className="store-selector" onSubmit={this.storeNameEntered}>
           <h2>Please Enter A Store</h2>
-         <input type="text" ref={this.storeName} placeholder="Store Name" required ></input>
+         <input type="text" ref={this.storeName} placeholder="Store Name" required  defaultValue={getFunName()}></input>
          <button type="submit">Visit Store</button>
       </form>
       </>

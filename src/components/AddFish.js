@@ -17,12 +17,13 @@ export default class AddFish extends Component {
        event.preventDefault()
        const fishData={
            name:this.fishName.current.value,
-           price:this.fishPrice.current.value,
+           price:parseFloat(this.fishPrice.current.value),
            status:this.fishStatus.current.value,
            description:this.fishDescription.current.value,
            imageUrl:this.fishImage.current.value,
        }
        this.props.addFish(fishData)
+       event.currentTarget.reset()
        
     }
   render() {

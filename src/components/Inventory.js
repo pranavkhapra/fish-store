@@ -7,7 +7,7 @@ export default class Inventory extends Component {
             <div className="inventory">
                 <h2>Inventory!!</h2>
                 <AddFish addFish={this.props.addFish}/>
-                <button type="button">LOAD SAMPLE FISHES</button>
+                <button type="button" onClick={this.props.loadSampleFishes}>LOAD SAMPLE FISHES</button>
             </div>
         )
     }
