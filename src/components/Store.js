@@ -4,6 +4,7 @@ import Order from './Order'
 import Inventory from './Inventory'
 import sampleFishes from '../sample-fishes'
 import SampleFishComponent from './SampleFishComponent'
+import base from '../base'
 export default class Store extends Component {
     constructor(props) {
         super()
@@ -15,7 +16,12 @@ export default class Store extends Component {
             order:{}
         }
     }
-
+      componentDidMount(){
+        this.ref=base.syncState(`${this.props.match.params.idOfTheStore}/fish`,{
+            context:this,
+            state:'fishes'
+        })
+    }
     addFish(fish){
         //copy of the state in a new object
         const newFishes={...this.state.fishes}
@@ -37,7 +43,7 @@ export default class Store extends Component {
     this.setState({fishes:sampleFishes})
      }
     
-
+   
     render() {
         return (
             <div className="catch-of-the-day">

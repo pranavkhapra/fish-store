@@ -13,7 +13,7 @@ export default class SampleFishComponent extends Component {
     
       const {name,image,description,price,status}=this.props.fishesDetails
     
-    const isAvailable=status=="available"
+    const isAvailable=status==="available"
     return (
       <li className="menu-fish">
         <img src={image} alt={name}/>
