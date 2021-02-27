@@ -6,7 +6,11 @@ class Order extends React.Component {
     const fish = this.props.fishes[key];
     const count = this.props.order[key];
     const isAvailable = fish && fish.status === "available";
-    
+    // why is there is no fish this is the most intresting part the thing eith local storage
+    //  is it is fast and immediate but with re-base it takes time to got to firebase and at that instant of time 
+    // there is no fish because we are trying to render out the order before the fishes actually exist 
+    // (when we load the page until we go to firebase and put back to states)
+    if(!fish)  return null;
     if (!isAvailable) {
       return (
         <li key={key}>

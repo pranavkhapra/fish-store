@@ -17,10 +17,18 @@ export default class Store extends Component {
         }
     }
       componentDidMount(){
+          //first reinstate our local storage
+          const localStorageRef=localStorage.getItem(this.props.match.params.idOfTheStore)
+          if(localStorageRef){
+              this.setState({order:JSON.parse(localStorageRef)})
+          }
         this.ref=base.syncState(`${this.props.match.params.idOfTheStore}/fish`,{
             context:this,
             state:'fishes'
         })
+    }
+    componentDidUpdate(){
+       localStorage.setItem(this.props.match.params.idOfTheStore,JSON.stringify(this.state.order)) 
     }
     addFish(fish){
         //copy of the state in a new object
