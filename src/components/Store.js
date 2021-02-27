@@ -12,6 +12,7 @@ export default class Store extends Component {
         this.loadSampleFishes=this.loadSampleFishes.bind(this)
         this.addToOrder=this.addToOrder.bind(this)
         this.updateFish=this.updateFish.bind(this)
+        this.deleteFish=this.deleteFish.bind(this)
         this.state = {
             fishes:{},
             order:{}
@@ -60,6 +61,11 @@ export default class Store extends Component {
      //set that ot the state
      this.setState({fishes})
     }
+    deleteFish(key){
+        const fishes={...this.state.fishes}
+        fishes[key]=null;
+        this.setState({fishes:fishes})
+    }
     render() {
         return (
             <div className="catch-of-the-day">
@@ -71,7 +77,9 @@ export default class Store extends Component {
                 </ul>
                 </div>
                 <Order fishes={this.state.fishes} order={this.state.order}/>
-                <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes} fishes={this.state.fishes} updateFish={this.updateFish}/>
+                <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes} fishes={this.state.fishes}
+                 deleteFish={this.deleteFish}
+                 updateFish={this.updateFish}/>
                 
             </div>
         )

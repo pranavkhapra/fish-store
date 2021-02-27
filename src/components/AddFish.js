@@ -22,6 +22,9 @@ export default class AddFish extends Component {
            description:this.fishDescription.current.value,
            imageUrl:this.fishImage.current.value,
        }
+       if(!fishData.price){
+         return null;
+       }
        this.props.addFish(fishData)
        event.currentTarget.reset()
        

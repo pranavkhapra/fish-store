@@ -4,6 +4,7 @@ export default class EditFishForm extends Component {
     constructor(props) {
         super()
         this.handleChange=this.handleChange.bind(this)
+            
     }
     handleChange(event){
       const updatedFish={
@@ -12,6 +13,8 @@ export default class EditFishForm extends Component {
       }
       this.props.updateFish(this.props.index,updatedFish)
     }
+
+    
     render() {
         return (
             <div className="fish-edit">
@@ -22,7 +25,9 @@ export default class EditFishForm extends Component {
                 <option value="unavailable">Sold Out!!</option>
             </select>
             <textarea  name="description" onChange={this.handleChange} value={this.props.fishes.description}/>
-            <input type="text"  name="image" onChange={this.handleChange} value={this.props.fishes.image}/></div>
+            <input type="text"  name="image" onChange={this.handleChange} value={this.props.fishes.image}/>
+            <button onClick={() =>this.props.deleteFish(this.props.index)}>REMOVE FISH!</button>
+            </div>
         )
     }
 }
