@@ -4,7 +4,7 @@ export default class EditFishForm extends Component {
     constructor(props) {
         super()
         this.handleChange=this.handleChange.bind(this)
-            
+                
     }
     handleChange(event){
       const updatedFish={
