@@ -1,6 +1,17 @@
 import React, { Component } from 'react'
+import PropTypes from "prop-types"
 import {formatPrice} from "../helpers"
 export default class SampleFishComponent extends Component {
+  static propTypes={
+    details:PropTypes.shape({
+      image:PropTypes.string,
+      name:PropTypes.string,
+      desc:PropTypes.string,
+      status:PropTypes.string,
+      price:PropTypes.number,
+    }),
+    addToOrder:PropTypes.func
+  }
   constructor(props) {
     super(props)
     this.handleClick=this.handleClick.bind(this)

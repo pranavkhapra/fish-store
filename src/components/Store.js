@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from "prop-types"
 import MarketPlace from './MarketPlace'
 import Order from './Order'
 import Inventory from './Inventory'
@@ -6,6 +7,9 @@ import sampleFishes from '../sample-fishes'
 import SampleFishComponent from './SampleFishComponent'
 import base from '../base'
 export default class Store extends Component {
+    static propTypes={
+        match:PropTypes.object
+    }
     constructor(props) {
         super()
         this.addFish=this.addFish.bind(this)

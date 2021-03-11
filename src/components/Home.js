@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
+import PropTypes from "prop-types"
 import {getFunName} from '../helpers'
 export default class Home extends Component {
+  static propTypes={
+    history:PropTypes.object
+  }
     constructor(props) {
         super()
         this.storeNameEntered=this.storeNameEntered.bind(this)

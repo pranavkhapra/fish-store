@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 export default class AddFish extends Component {
     fishName=React.createRef()
     fishPrice=React.createRef()
     fishStatus=React.createRef()
     fishDescription=React.createRef()
     fishImage=React.createRef()
-    
+     static propTypes={
+       addFish:PropTypes.func
+     }
     constructor(props) {
         super()
         this.addFishData=this.addFishData.bind(this)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 export default class MarketPlace extends Component {
     render() {
         return (
@@ -20,4 +20,7 @@ export default class MarketPlace extends Component {
             </>
         )
     }
+}
+MarketPlace.propTypes={
+    tagline:PropTypes.string.isRequired
 }
