@@ -14,7 +14,6 @@ export default class AddFish extends Component {
         this.addFishData=this.addFishData.bind(this)
     }
 
-   
     addFishData(event){
        event.preventDefault()
        const fishData={
