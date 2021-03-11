@@ -16,6 +16,6 @@ function Login(props) {
     )
 }
 Login.propTypes={   
-    authenicate:PropTypes.func.isRequired
+    authenicate:PropTypes.func
 }
 export default Login

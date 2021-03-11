@@ -22,5 +22,5 @@ export default class MarketPlace extends Component {
     }
 }
 MarketPlace.propTypes={
-    tagline:PropTypes.string.isRequired
+    tagline:PropTypes.string
 }

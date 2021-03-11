@@ -90,7 +90,7 @@ export default class Store extends Component {
                 <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes} fishes={this.state.fishes}
                  deleteFish={this.deleteFish}
                  updateFish={this.updateFish}
-                 storeId={this.props.match.params.storeId}
+                 idOfTheStore={this.props.match.params.idOfTheStore}
                  />
                 
             </div>
